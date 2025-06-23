@@ -23,7 +23,7 @@ WHERE name NOT LIKE '% %';
 --№5 Название треков, которые содержат слово «мой» или «my».
 SELECT TrackID, name
 FROM Track
-WHERE name LIKE '%мой%' OR name LIKE '%my%';
+WHERE string_to_array(lower(name), ' ') && ARRAY['my', 'мой'];
 
 --Задание №3--
 
